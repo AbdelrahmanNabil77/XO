@@ -17,12 +17,12 @@
             <Font name="Cambria Math" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="newGame_txt" layoutX="252.0" layoutY="216.0" mnemonicParsing="false" onAction="#NewGameAction" prefHeight="46.0" prefWidth="196.0" style="-fx-background-color: #3FAC76;" text="NEW GAME">
+      <Button fx:id="newGame_txt" layoutX="252.0" layoutY="145.0" mnemonicParsing="false" onAction="#NewGameAction" prefHeight="46.0" prefWidth="196.0" style="-fx-background-color: #3FAC76;" text="NEW GAME">
          <font>
             <Font name="Cambria Math" size="26.0" />
          </font>
       </Button>
-      <Button fx:id="record_txt" layoutX="252.0" layoutY="325.0" mnemonicParsing="false" onAction="#recordAction" prefHeight="46.0" prefWidth="196.0" style="-fx-background-color: #3FAC76;" text="RECORD">
+      <Button fx:id="record_txt" layoutX="252.0" layoutY="219.0" mnemonicParsing="false" onAction="#recordAction" prefHeight="46.0" prefWidth="196.0" style="-fx-background-color: #3FAC76;" text="RECORD">
          <font>
             <Font name="Cambria Math" size="25.0" />
          </font>
@@ -30,6 +30,11 @@
       <Button mnemonicParsing="false" onAction="#back_click" prefHeight="32.0" prefWidth="64.0" style="-fx-background-color: #9BD8BA;" text="&lt;--" textFill="#1d804e">
          <font>
             <Font name="Cambria Math" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="record_txt1" layoutX="252.0" layoutY="299.0" mnemonicParsing="false" onAction="#log_out" prefHeight="46.0" prefWidth="196.0" style="-fx-background-color: #3FAC76;" text="Log Out">
+         <font>
+            <Font name="Cambria Math" size="25.0" />
          </font>
       </Button>
    </children>

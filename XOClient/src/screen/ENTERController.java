@@ -10,6 +10,8 @@ package screen;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,7 +38,8 @@ public class ENTERController implements Initializable {
     private Button newGame_txt;
     @FXML
     private Button record_txt;
-    String Name;
+    String Name ;
+    int s ;
     /**
      * Initializes the controller class.
      */
@@ -47,12 +50,13 @@ public class ENTERController implements Initializable {
     }
     public void nPlayerScore(int scr)
     {
+        s = scr;
         score.setText(""+scr);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+     
     }    
 
    
@@ -71,19 +75,39 @@ public class ENTERController implements Initializable {
           window.setScene(viewscene);
           window.show();
     }
+     @FXML
+    private void log_out(ActionEvent event)  {
+        
+        try {
+            FXMLLoader loader =new FXMLLoader();
+            loader.setLocation(getClass().getResource("/xoClientView/signIN.fxml"));
+            Parent viewParent =loader.load();
+            Scene viewscene =new Scene (viewParent);
+            SignINController controller =loader.getController();
+            Stage window =(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(viewscene);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ENTERController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     @FXML
-    private void NewGameAction(ActionEvent event) throws IOException {
+    private void NewGameAction(ActionEvent event)  {
        
-          FXMLLoader loader =new FXMLLoader();
-          loader.setLocation(getClass().getResource("/xoClientView/FreeOnlinePlayers.fxml"));
-          Parent viewParent =loader.load();
-          Scene viewscene =new Scene (viewParent);
-          FreeOnlinePlayersController controller =loader.getController();
-          controller.set_playerName(Name);
-          Stage window =(Stage)((Node)event.getSource()).getScene().getWindow();
-          window.setScene(viewscene);
-          window.show();
+        try {
+            FXMLLoader loader =new FXMLLoader();
+            loader.setLocation(getClass().getResource("/xoClientView/FreeOnlinePlayers.fxml"));
+            Parent viewParent =loader.load();
+            Scene viewscene =new Scene (viewParent);
+            FreeOnlinePlayersController controller =loader.getController();
+            controller.set_playerName(Name ,s );
+            Stage window =(Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(viewscene);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ENTERController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 

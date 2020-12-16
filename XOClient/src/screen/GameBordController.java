@@ -27,7 +27,7 @@ import javafx.stage.Stage;
  */
 public class GameBordController implements Initializable {
 
-  @FXML
+@FXML
     private Label player1;
 @FXML
     private Label player2;

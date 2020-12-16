@@ -32,9 +32,11 @@ public class FreeOnlinePlayersController implements Initializable {
     @FXML
     private javafx.scene.control.ListView listView;
      String Name;
-    public void set_playerName(String name)
+     int scr ;
+    public void set_playerName(String name , int score)
     {
         Name = name;
+        scr = score;
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,11 +66,11 @@ public class FreeOnlinePlayersController implements Initializable {
        
        
          FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/xoClientView/GameBord.fxml"));
+        loader.setLocation(getClass().getResource("/xoClientView/NetworkGameBoard.fxml"));
         Parent viewparent = loader.load();
         Scene viewscene = new Scene(viewparent);
-        GameBordController controller = loader.getController();
-        controller.setText(Name ,view1 ,"x" ,"o","online");
+        NetworkGameBoardController controller = loader.getController();
+        controller.setText(Name ,view1 ,"X" ,"O" , scr);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewscene);
         window.show();
