@@ -15,7 +15,7 @@
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="bodybg" stylesheets="@../Style/GameStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="screen.NetworkGameBoardController">
    <children>
       <BorderPane layoutX="20.0" layoutY="18.0" prefHeight="500.0" prefWidth="700.0">
-         <center>
+         <top>
             <Pane prefHeight="513.0" prefWidth="700.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="player1" layoutX="159.0" layoutY="60.0" text="player1" textFill="#fbfafa">
@@ -97,11 +97,11 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <Button fx:id="Done_Btn" mnemonicParsing="false" onAction="#Done_btn" prefHeight="25.0" prefWidth="104.0" text="Done" />
-                  <Pane fx:id="pane2" layoutX="1.0" layoutY="3.0" prefHeight="511.0" prefWidth="700.0" visible="false">
+                  <Pane fx:id="pane2" layoutX="-14.0" layoutY="-12.0" prefHeight="511.0" prefWidth="700.0">
                      <children>
                         <MediaView fx:id="mediaView" fitHeight="250.0" fitWidth="400.0" layoutX="150.0" layoutY="164.0" visible="false" />
-                        <Label fx:id="winner_loser_txt" layoutX="122.0" layoutY="39.0" prefHeight="66.0" prefWidth="442.0" text="player1 is winner" textFill="#f8f7f7" visible="false">
+                        <Button fx:id="Done_Btn" layoutX="318.0" layoutY="456.0" mnemonicParsing="false" onAction="#Done_btn" prefHeight="22.0" prefWidth="102.0" text="Done" visible="false" />
+                        <Label fx:id="winner_loser_txt" layoutX="141.0" layoutY="56.0" prefHeight="66.0" prefWidth="442.0" text="player1 is winner" textAlignment="CENTER" textFill="#f8f7f7" visible="false">
                            <font>
                               <Font name="Cambria Math" size="25.0" />
                            </font>
@@ -110,7 +110,7 @@
                   </Pane>
                </children>
             </Pane>
-         </center>
+         </top>
       </BorderPane>
    </children>
 </AnchorPane>

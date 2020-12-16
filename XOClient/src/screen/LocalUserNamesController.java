@@ -49,13 +49,13 @@ public class LocalUserNamesController implements Initializable {
      
      if (x.isSelected())
         {
-             symbole1 = "x";
-             symbole2 = "o";
+             symbole1 = "X";
+             symbole2 = "O";
         }
      else if(o.isSelected())
         {
-             symbole1 = "o";
-             symbole2 = "x";
+             symbole1 = "O";
+             symbole2 = "X";
         }
      if((player1.getText().isEmpty() || player1.getText().contains(" "))||( player2.getText().isEmpty() || player2.getText().contains(" ")))
    {
@@ -66,11 +66,11 @@ public class LocalUserNamesController implements Initializable {
      else{
         
        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/xoClientView/GameBord.fxml"));
+        loader.setLocation(getClass().getResource("/xoClientView/LocalGameBoard.fxml"));
         Parent viewparent = loader.load();
         Scene viewscene = new Scene(viewparent);
-        GameBordController controller = loader.getController();
-        controller.setText(player1.getText() ,player2.getText() ,symbole1 ,symbole2, "local");
+        LocalGameBoardController controller = loader.getController();
+        controller.setText(player1.getText() ,player2.getText() ,symbole1 ,symbole2);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewscene);
         window.show();

@@ -51,13 +51,13 @@ private void handleStartSinglePlayer (ActionEvent event) throws IOException
      
    if (x.isSelected())
         {
-             symbole1 = "x";
-             symbole2 = "o";
+             symbole1 = "X";
+             symbole2 = "O";
         }
    else if(o.isSelected())
    {
-             symbole1 = "o";
-             symbole2 = "x";
+             symbole1 = "O";
+             symbole2 = "X";
    }
    if(playerName.getText().isEmpty() || playerName.getText().contains(" "))
    {
@@ -68,12 +68,12 @@ private void handleStartSinglePlayer (ActionEvent event) throws IOException
    else
    {
    
-    FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/xoClientView/GameBord.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/xoClientView/SingleGameBord.fxml"));
         Parent viewparent = loader.load();
         Scene viewscene = new Scene(viewparent);
-        GameBordController controller = loader.getController();
-        controller.setText(playerName.getText() , "computer" ,symbole1 ,symbole2 , "single");
+        SingleGameBordController controller = loader.getController();
+        controller.setText(playerName.getText() , "computer" ,symbole1 ,symbole2 );
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewscene);
         window.show();
