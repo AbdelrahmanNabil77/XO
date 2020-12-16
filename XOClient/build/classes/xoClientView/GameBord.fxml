@@ -96,7 +96,6 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <Button layoutX="29.0" layoutY="453.0" mnemonicParsing="false" onAction="#ShowVideo" text="show video" />
                </children>
             </Pane>
          </center>

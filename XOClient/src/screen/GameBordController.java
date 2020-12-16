@@ -50,18 +50,6 @@ public class GameBordController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     } 
-    @FXML
-    private void ShowVideo(ActionEvent event) throws IOException
-    {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/xoClientView/ShowVideo.fxml"));
-        Parent viewparent = loader.load();
-        Scene viewscene = new Scene(viewparent);
-        ShowVideoController controller = loader.getController();
-        
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(viewscene);
-        window.show(); 
-    }
+   
     
 }
